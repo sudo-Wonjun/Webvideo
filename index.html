@@ -14,6 +14,9 @@
   <video id="player" class="video-js" controls autoplay preload="auto" width="854" height="480" >
       <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
    </video>
+  
+  <button class="previous">Previous</button>
+   <button class="next">Next</button>
 
   <script>
   var player = videojs("player");
@@ -48,6 +51,14 @@
 
 
   ]);
+    
+    document.querySelector('.previous').addEventListener('click', function() {
+  player.playlist.previous();
+});
+
+document.querySelector('.next').addEventListener('click', function() {
+  player.playlist.next();
+});
 
   // Play through the playlist automatically.
   player.playlist.autoadvance(0);
